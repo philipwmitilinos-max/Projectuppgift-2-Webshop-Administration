@@ -18,7 +18,11 @@ public abstract class Product {
         productList = new ArrayList<>();
     }
 
-    public abstract void category() {
+    public String getTitle() {
+        return title;
+    }
+
+    public abstract void category(Bok, Elektronik, Kläder) {
 
     }
 }
