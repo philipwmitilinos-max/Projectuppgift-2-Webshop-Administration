@@ -10,7 +10,8 @@ public class Kläder extends Product {
         this.coloer = coloer;
     }
 
-    public abstract category() {
-
+    @Override
+    public String category() {
+        return "KLÄDER";
     }
 }

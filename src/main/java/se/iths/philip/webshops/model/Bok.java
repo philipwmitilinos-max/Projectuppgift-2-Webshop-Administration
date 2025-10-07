@@ -10,7 +10,8 @@ public class Bok extends Product {
         this.sidor = sidor;
     }
 
-    public abstract category() {
-
+    @Override
+    public String category() {
+        return "BÖCKER";
     }
 }

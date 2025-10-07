@@ -10,7 +10,8 @@ public class Elektronik extends Product {
         this.garanti = garanti;
     }
 
-    public abstract category() {
-
+    @Override
+    public String category() {
+        return "ELEKTRONIK";
     }
 }
