@@ -14,6 +14,18 @@ public abstract class Product {
         this.description = description;
     }
 
+    public int getArticleNumber() {
+        return articleNumber;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
     public String getTitle() {
         return title;
     }
