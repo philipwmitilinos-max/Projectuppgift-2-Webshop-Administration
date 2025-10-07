@@ -1,8 +1,8 @@
 package se.iths.philip.webshops;
 
 import se.iths.philip.webshops.model.Bok;
+import se.iths.philip.webshops.model.Clothes;
 import se.iths.philip.webshops.model.Elektronik;
-import se.iths.philip.webshops.model.Kläder;
 import se.iths.philip.webshops.model.Product;
 
 import java.util.ArrayList;
@@ -55,7 +55,7 @@ public class Main {
             System.out.println("Vilken typ av produkt vill du lägga till?");
             System.out.println("1. Böcker");
             System.out.println("2. Elektronik");
-            System.out.println("3. Kläder");
+            System.out.println("3. Clothes");
             int input = scanner.nextInt();
             scanner.nextLine();
             switch (input) {
@@ -66,7 +66,7 @@ public class Main {
                     addElektronik();
                     break;
                 case 3:
-                    addKläder();
+                    addClothes();
                     break;
                 default:
                     break;
@@ -123,7 +123,7 @@ public class Main {
         }
     }
 
-    public static void addKläder() {
+    public static void addClothes() {
         try {
             System.out.println("Ge article number");
             int articleNumber = scanner.nextInt();
@@ -139,8 +139,8 @@ public class Main {
             String size = scanner.nextLine();
             System.out.println("Ge färg");
             String coloer = scanner.nextLine();
-            Kläder kläder = new Kläder(articleNumber, title, price, description, size, coloer);
-            productList.add(kläder);
+            Clothes clothes = new Clothes(articleNumber, title, price, description, size, coloer);
+            productList.add(clothes);
         } catch (Exception e) {
             System.out.println("Något fel har hänt!");
         }

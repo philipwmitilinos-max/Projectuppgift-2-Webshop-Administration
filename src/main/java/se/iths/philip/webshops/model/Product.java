@@ -18,7 +18,7 @@ public abstract class Product {
         return title;
     }
 
-//    public abstract String category(String Bok, String Elektronik, String Kläder) {
+//    public abstract String category(String Bok, String Elektronik, String Clothes) {
 //        System.out.println("Kategorier ");
 //    }
 
