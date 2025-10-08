@@ -14,4 +14,13 @@ public class Elektronik extends Product {
     public String category() {
         return "ELEKTRONIK";
     }
+
+    @Override
+    public String toString() {
+        return super.toString() +
+                "\nKategori: " + category() +
+                "\nVarumärke: " + varumärke +
+                "\nGaranti: " + garanti;
+    }
+
 }

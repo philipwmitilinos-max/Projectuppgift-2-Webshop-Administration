@@ -30,9 +30,13 @@ public abstract class Product {
         return title;
     }
 
-//    public abstract String category(String Bok, String Elektronik, String Clothes) {
-//        System.out.println("Kategorier ");
-//    }
-
     public abstract String category();
+
+    @Override
+    public String toString() {
+        return "Artikelnummer: " + articleNumber +
+                "\nTitel: " + title +
+                "\nPris: " + price + " kr" +
+                "\nBeskrivning: " + description;
+    }
 }

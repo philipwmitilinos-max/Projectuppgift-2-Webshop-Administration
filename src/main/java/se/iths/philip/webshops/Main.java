@@ -17,11 +17,15 @@ public class Main {
     public static void main(String[] args) {
         productList = new ArrayList<>();
 
-        Bok listBok = new Bok(101, "Antekning", 49, "En anteknings bok.", "Bouyner AB", 55);
+        Bok listBok = new Bok(101, "Antekning",
+                49, "En anteknings bok.", "Bouyner AB", 55);
         productList.add(listBok);
-        Elektronik listElektronik = new Elektronik(201, "Cat5e STP Kabel 10m", 599, "Kategori 5 express Shielded Twisted Pair kabel 10 meter.", "IEEE", "6 månader.");
+        Elektronik listElektronik = new Elektronik(201, "Cat5e STP Kabel 10m",
+                599, "Kategori 5 express Shielded Twisted Pair kabel 10 meter.",
+                "IEEE", "6 månader.");
         productList.add(listElektronik);
-        Clothes listClothes = new Clothes(301, "Tröja", 79, "Bomuls tröja.", "XL", "Vit");
+        Clothes listClothes = new Clothes(301, "Tröja",
+                79, "Bomuls tröja.", "XL", "Vit");
         productList.add(listClothes);
 
         try {
@@ -43,7 +47,7 @@ public class Main {
                         showProductList();
                         break;
                     case 3:
-                        System.out.println("Visa en produkt.");
+                        findProduct();
                         break;
                     case 4:
                         System.out.println("Avslutar applikationen");
@@ -100,7 +104,8 @@ public class Main {
             System.out.println("Ge sidor");
             int sidor = scanner.nextInt();
             scanner.nextLine();
-            Bok bok = new Bok(articleNumber, title, price, description, auther, sidor);
+            Bok bok = new Bok(articleNumber,
+                    title, price, description, auther, sidor);
             productList.add(bok);
         } catch (Exception e) {
             System.out.println("Något fel har hänt!");
@@ -123,7 +128,8 @@ public class Main {
             String varumärke = scanner.nextLine();
             System.out.println("Ge garanti längd");
             String garanti = scanner.nextLine();
-            Elektronik elektronik = new Elektronik(articleNumber, title, price, description, varumärke, garanti);
+            Elektronik elektronik = new Elektronik(articleNumber,
+                    title, price, description, varumärke, garanti);
             productList.add(elektronik);
         } catch (Exception e) {
             System.out.println("Något fel har hänt!");
@@ -145,8 +151,13 @@ public class Main {
             System.out.println("Set storlek");
             String size = scanner.nextLine();
             System.out.println("Ge färg");
-            String coloer = scanner.nextLine();
-            Clothes clothes = new Clothes(articleNumber, title, price, description, size, coloer);
+            String color = scanner.nextLine();
+            Clothes clothes = new Clothes(articleNumber,
+                    title,
+                    price,
+                    description,
+                    size,
+                    color);
             productList.add(clothes);
         } catch (Exception e) {
             System.out.println("Något fel har hänt!");
@@ -154,9 +165,34 @@ public class Main {
     }
 
     public static void showProductList() {
-        System.out.println(productList.size());
+        System.out.println("Antal produkter: " + productList.size());
         for (Product product : productList) {
+            System.out.println("-------------------------------------------------------");
             System.out.println(product);
+            System.out.println();
+        }
+    }
+
+    public static void findProduct() {
+        try {
+            System.out.println("Ange artikelnummer:");
+            int searchInput = scanner.nextInt();
+            scanner.nextLine();
+            boolean found = false;
+            for (Product product : productList) {
+                if (product.getArticleNumber() == searchInput) {
+                    System.out.println("***********************************************************");
+                    System.out.println(product);
+                    System.out.println();
+                    found = true;
+                    break;
+                }
+            }
+            if (!found) {
+                System.out.println("Hittar inte artikelnummer: " + searchInput);
+            }
+        } catch (InputMismatchException e) {
+            System.out.println("Något fel har hänt!");
         }
     }
 }
