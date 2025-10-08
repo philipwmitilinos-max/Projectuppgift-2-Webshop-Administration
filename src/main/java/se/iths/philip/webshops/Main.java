@@ -89,7 +89,7 @@ public class Main {
 
     public static void addBok() {
         try {
-            System.out.println("Ge article number");
+            System.out.println("Ge artikelnummer");
             int articleNumber = scanner.nextInt();
             scanner.nextLine();
             System.out.println("Ge title");
@@ -114,7 +114,7 @@ public class Main {
 
     public static void addElektronik() {
         try {
-            System.out.println("Ge article number");
+            System.out.println("Ge artikelnummer");
             int articleNumber = scanner.nextInt();
             scanner.nextLine();
             System.out.println("Ge title");
@@ -138,7 +138,7 @@ public class Main {
 
     public static void addClothes() {
         try {
-            System.out.println("Ge article number");
+            System.out.println("Ge artikelnummer");
             int articleNumber = scanner.nextInt();
             scanner.nextLine();
             System.out.println("Ge title");
