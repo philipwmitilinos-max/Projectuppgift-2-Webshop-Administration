@@ -17,6 +17,13 @@ public class Main {
     public static void main(String[] args) {
         productList = new ArrayList<>();
 
+        Bok listBok = new Bok(101, "Antekning", 49, "En anteknings bok.", "Bouyner AB", 55);
+        productList.add(listBok);
+        Elektronik listElektronik = new Elektronik(201, "Cat5e STP Kabel 10m", 599, "Kategori 5 express Shielded Twisted Pair kabel 10 meter.", "IEEE", "6 månader.");
+        productList.add(listElektronik);
+        Clothes listClothes = new Clothes(301, "Tröja", 79, "Bomuls tröja.", "XL", "Vit");
+        productList.add(listClothes);
+
         try {
             while (true) {
                 System.out.println("Meny");
