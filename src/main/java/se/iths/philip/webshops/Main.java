@@ -40,24 +40,19 @@ public class Main {
                 scanner.nextLine();
                 System.out.println();
                 switch (input) {
-                    case 1:
-                        addProduct();
-                        break;
-                    case 2:
-                        showProductList();
-                        break;
-                    case 3:
-                        findProduct();
-                        break;
-                    case 4:
+                    case 1 -> addProduct();
+                    case 2 -> showProductList();
+                    case 3 -> findProduct();
+                    case 4 -> {
                         System.out.println("Avslutar applikationen");
                         return;
-                    default:
-                        break;
+                    }
+                    default -> System.out.println("Fel val.");
                 }
+                
             }
         } catch (InputMismatchException e) {
-            System.out.println("Fel: input.");
+            System.err.println("Fel: input.");
         }
     }
 
@@ -70,20 +65,14 @@ public class Main {
             int input = scanner.nextInt();
             scanner.nextLine();
             switch (input) {
-                case 1:
-                    addBok();
-                    break;
-                case 2:
-                    addElektronik();
-                    break;
-                case 3:
-                    addClothes();
-                    break;
-                default:
-                    break;
+                case 1 -> addBok();
+                case 2 -> addElektronik();
+                case 3 -> addClothes();
+                default -> System.out.println("Fel val.");
             }
+
         } catch (InputMismatchException e) {
-            System.out.println("Fel: input.");
+            System.err.println("Fel: input.");
         }
     }
 
@@ -108,7 +97,7 @@ public class Main {
                     title, price, description, auther, sidor);
             productList.add(bok);
         } catch (Exception e) {
-            System.out.println("Något fel har hänt!");
+            System.err.println("Något fel har hänt!");
         }
     }
 
@@ -132,7 +121,7 @@ public class Main {
                     title, price, description, varumärke, garanti);
             productList.add(elektronik);
         } catch (Exception e) {
-            System.out.println("Något fel har hänt!");
+            System.err.println("Något fel har hänt!");
         }
     }
 
@@ -160,7 +149,7 @@ public class Main {
                     color);
             productList.add(clothes);
         } catch (Exception e) {
-            System.out.println("Något fel har hänt!");
+            System.err.println("Något fel har hänt!");
         }
     }
 
@@ -192,7 +181,7 @@ public class Main {
                 System.out.println("Hittar inte artikelnummer: " + searchInput);
             }
         } catch (InputMismatchException e) {
-            System.out.println("Något fel har hänt!");
+            System.err.println("Något fel har hänt!");
         }
     }
 }
